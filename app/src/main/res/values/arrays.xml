@@ -2,5 +2,7 @@
 <resources>
     <string-array name="example_scope">
         <item>com.discord</item>
+        <item>com.discord.beta</item>
+        <item>com.discord.canary</item>
     </string-array>
 </resources>
