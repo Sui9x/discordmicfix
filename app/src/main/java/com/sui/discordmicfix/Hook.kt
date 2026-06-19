@@ -12,12 +12,6 @@ class Hook : IXposedHookLoadPackage {
     companion object {
         private const val TAG = "DiscordMicFix"
 
-        private val TARGET_PKGS = setOf(
-            "com.discord"
-            // "com.discord.beta",
-            // "com.discord.canary"
-        )
-
         private val TARGET_MANAGER_CLASSES = arrayOf(
             "com.discord.audio.DiscordAudioManager",
             "com.discord.audio.DiscordAudioManager2"
@@ -67,7 +61,6 @@ class Hook : IXposedHookLoadPackage {
     }
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        if (!TARGET_PKGS.contains(lpparam.packageName)) return
 
         log("handleLoadPackage: ${lpparam.packageName}")
 
